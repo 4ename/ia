@@ -1,0 +1,127 @@
+<head>
+<body>
+<mycodes style="display:none">
+function ZZ9(ZZZ){
+/*******  I WROTE ALL OF THIS MYSELF. IF I ACCIDENTALLY PUT YOUR USER AGENT PARSING CODES INTO THIS, TELL ME AND I WILL REWRITE THAT SECTION OF THE CODE TO NOT HAVE YOUR CODES IN IT.  *******/
+/**** MAKE INPUT WORK FOR OTHER AREAS ****/
+a=ZZZ.split(' ')
+b=a.slice(1) 
+c=[];
+for (ZZY=0; ZZY<=b.length; ZZY++){
+c=c+b[ZZY]+" ";
+}
+/**** GET OPERATING SYSTEM ****/
+d=c.split(";")
+e=d[0].slice(1)
+console.log(e)
+if (e.includes("Mac")){
+f="Apple"; //brand
+g="Operating System" //I dont know how this would work
+g6o=[f+" "+g];
+} else if (e.includes('Windows')){
+f="Microsoft"; 
+g="Windows";
+/*** GET WINDOWS VERSION ***/
+g2=e.split(" ")
+/** WINDOWS VERSIONS **/
+g3=[g+" 10",g+" 8.1",g+" 8",g+" 7",g+" Vista"];
+/** SET g5 TO WINDOWS VERSION **/
+if (e.includes("10.0")){g5=g3[0]} //Windows 10
+else if (e.includes("6.3")){g5=g3[1]} //Windows 8.1
+else if (e.includes("6.2")){g5=g3[2]} //Windows 8
+else if (e.includes("6.1")){g5=g3[3]} //Windows 7
+else if (e.includes("6.0")){g5=g3[4]} //Windows Vista (I copy pasted that)
+/** DIFFERENT REPRESENTATIONS OF WINDOWS VERSION NAME **/
+g52=e.split(' NT').join('') //Windows 6.1
+g61=f+" "+g5//Microsoft Windows 10
+g62=g5.split(' ')[1] //10
+g63=g52.split(' ')[1] //6.1
+g64=e.slice(8)//NT 6.1
+g65=f+" "+g52//Microsoft Windows 6.1
+g66=f+" "+e//Microsoft Windows NT 6.1
+g67=e.split(" ")[1]=="NT"//true
+g68=f+" "+e.split('.')[0]//Microsoft Windows NT 10
+g69=e.split('.')[0] //Windows NT 10
+g6a=e.split('.')[0].split(' ')[1]+" "+e.split('.')[0].split(' ')[2] //Windows NT 10
+g6b=e.split(' ')[0]+" "+e.split(' ')[1] //Windows NT
+g6c=f+" "+e.split(' ')[0]+" "+e.split(' ')[1] //Microsoft Windows NT
+g6o=[g61,f,g,g52,e,g62,g63,g64,g65,g66,g67,g68,g69,g6a,g6b,g6c,g5] 
+/*
+Name	Microsoft	Windows		NT	Real_Version	Referenced_Version	Is_NT (0:"", 1:a boolean, 2:NT)
+g61		110010
+  f		100000
+  g		010000
+g52		010100
+  e		011100
+g62		000010
+g63		000100
+g64		001100
+g65		110100
+g66		111100
+g67		000001
+g68		111010
+g69		011010
+g6a		001010
+g6b		010002
+g6c		110002
+ g5		010010
+*/
+}else if (e.includes('Android')){
+g6o=["Android","This is a mobile device, like a phone or tablet, not made by Apple."]} else {
+g6o=["Other","An unknown operating system: \n"+
+"was put in to the input user agent, \n"+
+"is an operating system that is not on this list, \n"+
+"or the input is not a user agent."]
+}
+/**** GET BROWSER INFORMATION ****/
+/*** NOT INTERNET EXPLORER (the Internet Explorer user agent has a different structure) ***/
+this.ZBI=function(ZZW){
+var h1=ZZW.split("/")
+console.log(h1)
+		var h2=h1[1].split(".")
+/** GOOGLE CHROME **/
+	if (h1[0]=="Chrome"){ 
+
+		var h3o={major:h2[0], minor: h2[1], build: h2[2], patch: h2[3], name: "Chrome"}
+    }
+/** SAFARI **/
+	else if (h1[0]=="Safari"){
+		var h3o={major:h2[0],minor:h2[1]}
+/** EDGE **/
+        } 	else if (h1[0]=="Edge"){
+var h3o={name: "Edge",major: h2[0],build:h2[1]
+        }
+}
+	for (var ZZU in h3o){
+		this[ZZU]=h3o[ZZU];
+    }
+}
+
+//          **********************************<-------------anything below that star line is for compatibility with newer Microsoft Edge user agents
+if (d.join("").includes("ServiceUI")){
+h4a=b.slice(11);
+} else {
+h4a=b.slice(9);
+}
+h4b=[]
+for (ZZV=0; ZZV<=h4a.length-1; ZZV++){
+
+h4b[ZZV]=new this.ZBI(h4a[ZZV])
+
+}
+/**** MAKE EASILY READABLE STRING ****/
+if (h4b[2]){
+if (h4b[2].name=="Edge"){
+i1=h4b[2].name+" "+h4b[2].major+"."+h4b[2].build+" on Windows 10" //if you make Microsoft Edge run on not Windows 10, tell me
+}
+} else {
+i1=h4b[0].name+" "+h4b[0].major+" on "+g6o[16]
+}
+return {os:g6o,browser:h4b,parsed:i1,arc:[a.join("").includes("Win64"),a.join("").includes("x64")]};
+/**** DELETE SCRAMBLED VARIABLES ****/
+delete a; delete b; delete c; delete ZZY; delete d; delete e; delete f; delete g; delete g2; delete g3; delete g5; delete g52; delete g6a; delete g6b; delete g6c; delete g6o; delete g61; delete g62; delete g63; delete g64; delete g65; delete g66; delete g67; delete g68; delete g69;delete h4a; delete h4b; delete ZZV; delete i1;
+}
+</mycodes>
+<input type=text id="kittens"></input>
+<useragentshow></useragentshow>
+<button onclick="eval(document.body.children[0].innerHTML);document.body.children[2].innerHTML=ZZ9(document.body.children[1].value);delete ZZ9;
